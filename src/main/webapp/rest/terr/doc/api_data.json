@@ -1,0 +1,834 @@
+[
+  {
+    "type": "get",
+    "url": "/centrospoblados/:id",
+    "title": "Ver una Localidad",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/centrospoblados/1293",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetCentroPoblado",
+    "group": "Centros_poblados",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener una Localidad existente según el id remitido. Obtiene la localidad mediante el método local find(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.CentroPoblado",
+            "optional": false,
+            "field": "CentroPoblado",
+            "description": "<p>Detalle de la localidad registrada.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     {\n         \"id\": \"1293\",\n         \"nombre\": \"CORONEL BRANDSEN\",\n         \"departamento\": \n             {\n                 \"id\": \"18\",\n                 \"nombre\": \"BRANDSEN\",\n                 \"provincia\": \n                     {\n                         \"id\": \"2\",\n                         \"nombre\": \"BUENOS AIRES\"\n                     }\n             },\n         \"centrpopobladotipo\":\n             {\n                 \"id\": \"3\",\n                 \"nombre\": \"CIUDAD\"\n             }\n     }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CentroPobladoNotFound",
+            "description": "<p>No existe localidad registrada con ese id.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay localidad registrada con el id recibido\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/CentroPobladoFacadeREST.java",
+    "groupTitle": "Centros_poblados"
+  },
+  {
+    "type": "get",
+    "url": "/svf_especies",
+    "title": "Ver todas las Localidades",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/centrospoblados",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetCentrosPoblados",
+    "group": "Centros_poblados",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un listado de las Localidades existentes. Obtiene las localidades mediante el método local findAll()</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.CentroPoblado",
+            "optional": false,
+            "field": "CentroPoblado",
+            "description": "<p>Listado con todos las Localidades registradas.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"localidades\": [\n        {\n            \"id\": \"1293\",\n            \"nombre\": \"CORONEL BRANDSEN\",\n            \"departamento\": \n                {\n                    \"id\": \"18\",\n                    \"nombre\": \"BRANDSEN\",\n                    \"provincia\": \n                        {\n                            \"id\": \"2\",\n                            \"nombre\": \"BUENOS AIRES\"\n                        }\n                },\n            \"centrpopobladotipo\":\n                {\n                    \"id\": \"3\",\n                    \"nombre\": \"CIUDAD\"\n                }\n        },\n        {\n            \"id\": \"1291\",\n            \"nombre\": \"SAMBOROMBON\",\n            \"departamento\": \n                {\n                    \"id\": \"18\",\n                    \"nombre\": \"BRANDSEN\",\n                    \"provincia\": \n                        {\n                            \"id\": \"2\",\n                            \"nombre\": \"BUENOS AIRES\"\n                        }\n                },\n            \"centrpopobladotipo\":\n                {\n                    \"id\": \"9\",\n                    \"nombre\": \"PARAJE\"\n                }\n        }\n     ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "EspeciesNotFound",
+            "description": "<p>No existen localidades registradas.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay Localidades registradas\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/CentroPobladoFacadeREST.java",
+    "groupTitle": "Centros_poblados"
+  },
+  {
+    "type": "get",
+    "url": "/departamentos/:id/centrospoblados",
+    "title": "Ver las Localidades de un Departamento",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/departamentos/1290/centrospoblados",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetCentosPoblados",
+    "group": "Departamentos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener las Localidades asociadas a un Departamento existente según el id remitido. Obtiene las localidades mediante el método local getCentrosXDepto(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.CentroPoblado",
+            "optional": false,
+            "field": "CentroPoblado",
+            "description": "<p>Listado de las Localidades registradas vinculadas al Departamento cuyo id se recibió.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n {\n     \"centrospoblados\": [\n         {\n             \"id\": \"1290\",\n             \"nombre\": \"ALTAMIRANO\",\n             \"departamento\": \n                 {\n                     \"id\": \"18\",\n                     \"nombre\": \"BRANDSEN\",\n                     \"provincia\": \n                         {\n                             \"id\": \"2\",\n                             \"nombre\": \"BUENOS AIRES\"\n                         }\n                 },\n             \"centrpopobladotipo\":\n                 {\n                     \"id\": \"7\",\n                     \"nombre\": \"CASERIO\"\n                 }\n         },\n         {\n             \"id\": \"1291\",\n             \"nombre\": \"JEPPENER\",\n             \"departamento\": \n                 {\n                     \"id\": \"18\",\n                     \"nombre\": \"BRANDSEN\",\n                     \"provincia\": \n                         {\n                             \"id\": \"2\",\n                             \"nombre\": \"BUENOS AIRES\"\n                         }\n                 },\n             \"centrpopobladotipo\":\n                 {\n                     \"id\": \"7\",\n                     \"nombre\": \"CASERIO\"\n                 }\n         }\n     ]\n }",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CentroPobladoNotFound",
+            "description": "<p>No existen localidades registradas vinculadas a la id del departamento.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay localidades registradas vinculadas al id del departamento recibido.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/DepartamentoFacadeREST.java",
+    "groupTitle": "Departamentos"
+  },
+  {
+    "type": "get",
+    "url": "/departamentos/:id",
+    "title": "Ver un Departamento",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/departamentos/16",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetDepartamento",
+    "group": "Departamentos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un Departamento existente según el id remitido. Obtiene el departamento mediante el método local find(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.Departamento",
+            "optional": false,
+            "field": "Departamento",
+            "description": "<p>Detalle del departamento registrado.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  {\n     \"id\": \"16\",\n     \"nombre\": \"FLORENCIO VARELA\",\n     \"provincia\": \n         {\n             \"id\": \"2\",\n             \"nombre\": \"BUENOS AIRES\"\n         }\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "DepartamentoNotFound",
+            "description": "<p>No existe departamento registrado con ese id.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay departamento registrado con el id recibido\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/DepartamentoFacadeREST.java",
+    "groupTitle": "Departamentos"
+  },
+  {
+    "type": "get",
+    "url": "/departamentos",
+    "title": "Ver todos los Departamentos",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/departamentos",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetDepartamentos",
+    "group": "Departamentos",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un listado de los Departamentos existentes. Obtiene los departamentos mediante el método local findAll()</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.Departamento",
+            "optional": false,
+            "field": "Departamento",
+            "description": "<p>Listado con todos los Departamentos registrados.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"departamentos\": [\n     {\"id\": \"16\",\n     \"nombre\": \"FLORENCIO VARELA\",\n     \"provincia\": \n         {\n             \"id\": \"2\",\n             \"nombre\": \"BUENOS AIRES\"\n         }\n     },\n     {\"id\": \"18\",\n     \"nombre\": \"BRANDSEN\",\n     \"provincia\": \n         {\n             \"id\": \"2\",\n             \"nombre\": \"BUENOS AIRES\"\n         }\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "DepartamentosNotFound",
+            "description": "<p>No existen departamentos registrados.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay Departamentos registrados\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/DepartamentoFacadeREST.java",
+    "groupTitle": "Departamentos"
+  },
+  {
+    "type": "get",
+    "url": "/provincias/:id/generos",
+    "title": "Ver los Departamentos de una Provincia",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/provincias/2/departamentos",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetDepartamentos",
+    "group": "Provincias",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener los Departamentos asociados a una Provincia existente según el id remitido. Obtiene los departamentos mediante el método local getDeptosXIdProv(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.Genero",
+            "optional": false,
+            "field": "Genero",
+            "description": "<p>Listado de los Departamentos registrados vinculados a la Provincia cuyo id se recibió.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"departamentos\": [\n     {\"id\": \"16\",\n     \"nombre\": \"FLORENCIO VARELA\",\n     \"provincia\": \n         {\n             \"id\": \"2\",\n             \"nombre\": \"BUENOS AIRES\"\n         }\n     },\n     {\"id\": \"18\",\n     \"nombre\": \"BRANDSEN\",\n     \"provincia\": \n         {\n             \"id\": \"2\",\n             \"nombre\": \"BUENOS AIRES\"\n         }\n     }\n  ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "GenerosNotFound",
+            "description": "<p>No existen departamentos registrados vinculados a la id de la provincia.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay géneros registrados vinculados al id de la provincia recibido.\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/ProvinciaFacadeREST.java",
+    "groupTitle": "Provincias"
+  },
+  {
+    "type": "get",
+    "url": "/provincias/:id",
+    "title": "Ver una Provincia",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/provincias/2",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetProvincia",
+    "group": "Provincias",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener una Provincia existente según el id remitido. Obtiene la provincia mediante el método local find(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.Provincia",
+            "optional": false,
+            "field": "Provincia",
+            "description": "<p>Detalle de la provincia registrada.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  {\n     \"id\": \"2\",\n     \"nombre\": \"BUENOS AIRES\"\n  }\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ProvinciaNotFound",
+            "description": "<p>No existe provincia registrada con ese id.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay provincia registrada con el id recibido\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/ProvinciaFacadeREST.java",
+    "groupTitle": "Provincias"
+  },
+  {
+    "type": "get",
+    "url": "/provincias",
+    "title": "Ver todas las Provincias",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/provincias",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetProvincias",
+    "group": "Provincias",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un listado de las Provincias existentes. Obtiene las provincias mediante el método local findAll()</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.Provincia",
+            "optional": false,
+            "field": "Provincias",
+            "description": "<p>Listado con todas las Provincias registradas.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"provincias\": [\n     {\"id\": \"2\",\n     \"nombre\": \"BUENOS AIRES\"},\n     {\"id\": \"3\",\n     \"nombre\": \"CATAMARCA\"}\n     ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "ProvinciasNotFound",
+            "description": "<p>No existen provincias registradas.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay Provincias registradas\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/ProvinciaFacadeREST.java",
+    "groupTitle": "Provincias"
+  },
+  {
+    "type": "get",
+    "url": "/tipooscentrospoblados/:id",
+    "title": "Ver un Tipo de centro poblado",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/tipooscentrospoblados/7",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetCentroPobladoTipo",
+    "group": "Tipos_de_Centros_poblados",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un Tipo de centro poblado existente según el id remitido. Obtiene el tipo de centro poblado mediante el método local find(Long id)</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.CentroPobladoTipo",
+            "optional": false,
+            "field": "CentroPobladoTipo",
+            "description": "<p>Detalle del tipo de centro poblado registrado.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"id\": \"7\",\n     \"nombre\": \"CASERIO\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CentroPobladoTipoNotFound",
+            "description": "<p>No existe tipo de centro poblado registrado con ese id.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay tipo de centro poblado registrado con el id recibido\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/CentroPobladoTipoFacadeREST.java",
+    "groupTitle": "Tipos_de_Centros_poblados"
+  },
+  {
+    "type": "get",
+    "url": "/tipooscentrospoblados",
+    "title": "Ver todas los Tipos de centros poblados",
+    "examples": [
+      {
+        "title": "Ejemplo de uso:",
+        "content": "curl -i -H \"Content-Type: application/json\" -X GET -d /gestionTerritorial/rest/tipooscentrospoblados",
+        "type": "curl"
+      }
+    ],
+    "version": "1.0.0",
+    "name": "GetCentroPobladoTipos",
+    "group": "Tipos_de_Centros_poblados",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>Token recibido al autenticar el usuario</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Ejemplo de header:",
+          "content": "{\n  \"Authorization\": \"ssNjyzTYUqNUefxw4NOAtWGrpimMD96VXRxRlseoHewGxqqhnIw\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "description": "<p>Método para obtener un listado de todos los Tipos de Centros Poblados existentes. Obtiene las los tipos de centros poblados mediante el método local findAll()</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "ar.gob.ambiente.sacvefor.servicios.territorial.CentroPobladoTipo",
+            "optional": false,
+            "field": "CentroPobladoTipo",
+            "description": "<p>Listado con todos los Tipos de Centros poblados registradas.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n     \"tipooscentrospoblados\": [\n         {\n             \"id\": \"7\",\n             \"nombre\": \"CASERIO\"\n         },\n         {\n             \"id\": \"4\",\n             \"nombre\": \"BARRIO\"\n         }\n     ]\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "CentroPobladoTipoNotFound",
+            "description": "<p>No existen tipos de centros poblados registrados.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 400 Not Found\n{\n  \"error\": \"No hay Tipos de centros poblados registrados\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/CentroPobladoTipoFacadeREST.java",
+    "groupTitle": "Tipos_de_Centros_poblados"
+  },
+  {
+    "version": "1.0.0",
+    "name": "GetUsuario",
+    "group": "Usuario",
+    "description": "<p>Método para obtener el token para incluir en los header de los request a efectuar por parte del cliente. Recibe un nombre de usuario, valida que esté registrado correctamente con el método local validarUsuarioApi(user) y, de ser así,<br> genera un token y lo devuelve al usuario.</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "nombre",
+            "description": "<p>Nombre del usuario autorizado para consumir el servicio.</p>"
+          }
+        ]
+      }
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "authorization",
+            "description": "<p>Token de autenticación para enviar como header en los métodos de consulta.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "HTTP/1.1 200 OK\n{\n  \"authorization\": \"{{token}}\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "Error 4xx": [
+          {
+            "group": "Error 4xx",
+            "optional": false,
+            "field": "UsuarioInvalido",
+            "description": "<p>Mensaje vacío.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "HTTP/1.1 404 Not Found\n{}",
+          "type": "json"
+        }
+      ]
+    },
+    "type": "",
+    "url": "",
+    "filename": "src/main/java/ar/gob/ambiente/servicios/gestionterritorial/rest/UsuarioResource.java",
+    "groupTitle": "Usuario"
+  }
+]

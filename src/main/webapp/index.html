@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SACVeFor - Api Doc</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="shortcut icon" type="image/x-icon" href="resources/img/favicon.ico"/>
+        <script src="jquery/jquery.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">   
+        <script src="js/bootstrap.min.js"></script> 
+    </head>
+    <div class="panel panel-default" >
+        <!-- Header -->
+        <div class="panel-heading" style="background-color: #07220E">
+            <div class="row">
+                <div class="col-lg-2"><img src="resources/img/logoSACveforHeader.jpg" alt="" width="80" height="70" class="img-rounded"></div>
+                <div class="col-lg-7" style="color: #F1FCF4"><h1>SACVeFor - Documentación técnica</h1></div>
+                <div class="col-lg-3"><img src="resources/img/logoPres.png" alt="" width="339" height="67" class="img-rounded"></div>
+            </div>
+        </div>
+        <!-- Cuerpo -->
+        <div class="panel-body">
+            <!-- Barra de navegación -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/scvf-apidoc">Principal</a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                                    aria-expanded="false">API Rest <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                  <li><a href="/scvf-apidoc/rest/cgl/doc" >Gestión Local</a></li>
+                                <li><a href="/scvf-apidoc/rest/traz/doc" >Trazabilidad</a></li>
+                                <li><a href="/scvf-apidoc/rest/ctrl/doc" >Control y Verificación</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/scvf-apidoc/rest/rue/doc" >Registro único de entidades</a></li>
+                                <li><a href="/scvf-apidoc/rest/tax/doc" >Taxonomías</a></li>
+                                <li><a href="/scvf-apidoc/rest/terr/doc" >Estructura territorial</a></li>
+                              </ul>
+                            </li>
+                            <li class="dropdown">
+                              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" 
+                                    aria-expanded="false">API Usuarios <span class="caret"></span>
+                              </a>
+                              <ul class="dropdown-menu" role="menu">
+                                <li><a href="/scvf-apidoc/app/cgl/" target="_blank">Gestión Local</a></li>
+                                <li><a href="/scvf-apidoc/app/traz/" target="_blank">Trazabilidad</a></li>
+                                <li><a href="/scvf-apidoc/app/ctrl/" target="_blank">Control y Verificación</a></li>
+                                <li class="divider"></li>
+                                <li><a href="/scvf-apidoc/app/rue/" target="_blank">Registro único de entidades</a></li>
+                                <li><a href="/scvf-apidoc/app/tax/" target="_blank">Taxonomías</a></li>
+                                <li><a href="/scvf-apidoc/app/terr/" target="_blank">Estructura territorial</a></li>
+                              </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <!-- jumbotron -->
+            <div class="jumbotron">
+                <div class="container">
+                    <h1>Documentación general</h1>
+                    <p>El Sistema de Administración, Control y Verificación Forestal se compone de tres grupos de subistemas, a saber: </p>
+                    <p>a) Los Componentes de Gestión local a hospedar y administrar por cada Provincia adherente que registran y gestionan la respectiva información productiva.</p>
+                    <p>b) Los Componentes de Control y Verificación, y de Trazabilidad, hospedados y administrados de forma centralizada.</p>
+                    <p>c) Los Componentes de servicios de datos compartidos: Registro único de entidades, Taxonomías y Organización territorial, de uso y administración centralizada.</p>
+                    <p>Cada uno de los subsistemas mencionados que se describen a continuación, además de sus respectivas interfaces de usuario, se comunican entre sí mediante sus API de servicios REST, la documentación general de aplicación y servicios actualizada se encuentra accesible tanto desde la barra de menús como de los accesos al final de cada descripción.</p>
+                </div>
+            </div>
+
+            <!-- Grilla con los detalles y acceso -->
+            <div class="container">
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>Gestión local</h2>
+                        <p>Cada Provincia adherente al SACVeFor será proveída de un Componente de Gestión local, desde el cual generará la información primaria administrativa que autoriza la extracción y el primer movimiento de los productos forestales propios. La interfase de servicios de este subsistema, provee información de consulta sobre estados de guías, guías y vehículos registrados, y permite registrar información sobre cambios de estado de las guías emitidas al ser cerradas y controladas. </p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/cgl/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/cgl" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Trazabilidad</h2>
+                        <p>El Componente de Trazabilidad permite al destinatario de una guía emitida desde un Componente de Gestión local, confirmar su recepción cerrando su ciclo, además de la emisión y confirmación de guías de trazabilidad con o sin agregado de valor, controlando y actualizando el crédito de productos disponibles. La interface de servicios de este subsistema provée información de consulta respecto de entidades paramétricas, y usuarios, y permite registrar nuevos usuarios al momento de emitirse una guía cuyo destinatario aún no se encuentra registrado en el subsistema como usuario del mismo. </p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/traz/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/traz" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Control y Verificación</h2>
+                        <p>El Componente de Control y Verificación permite a usuarios no registrados consultar por la validez de un transporte de productos forestales mediante el ingreso de la matrícula del vehículo y a usuarios registrados, realizar los controles correspondientes. La interface de servicios de este subsistema provée información de consulta respecto de Componentes locales emisores de guías, controles realizados, guías, entidades paramétricas, puestos de control y usuarios, y permite registrar información en las guías registradas localmente al momento de su cierre.</p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/ctrl/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/ctrl" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h2>RUE</h2>
+                        <p>El Registro único de entidades (RUE) registra de manera unificada entidades comunes vinculadas a los procesos de trazabilidad de los productos forestales: personas físicas, personas jurídicas y vehículos de transporte. Los subsistemas opertivos ya descriptos, guardan sus entidades localmente con los datos cacheados del RUE y el id correspondiente del registro unificado. La interface de servicios de este subsistema permite hacer consultas, editar y agregar nuevas personas físicas, personas jurídicas, marcas y modelos de vehículos, vehículos, y hacer solicitar información sobre tipos de sociedad y tipos de entidades.. </p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/rue/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/rue" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Taxonomías</h2>
+                        <p>El Servicio de taxonomías prové la estructura jerárquica de familia, género, especie de todas las especies forestales nativas y foráneas de los productos extraídos y comercializados en y desde las Provincias adherentes al SACVeFor. Como en el caso del RUE, los datos obtenidos por los subsistemas son cacheados y guardados los id del servicio. </p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/tax/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/tax" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2>Territorial</h2>
+                        <p>El Servicio territorial provée la estructura jerárquica de Provincia, Departamento, Localidad de todas las Provincias que componen el territorio nacional. Como en los casos anteriores, los datos obtenidos por los subsistemas son cacheados y guardados los id del servicio.</p>
+                        <div class="btn-group">
+                            <a class="btn btn-default" href="/scvf-apidoc/rest/terr/doc" role="button">Ver API Rest &raquo;</a>
+                            <a class="btn btn-default" href="/scvf-apidoc/app/terr" target="_blank" role="button">Ver API Usuarios &raquo;</a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div> 
+        </div>
+        <!-- Footer -->
+        <div class="panel-footer" style="background-color: #9ed6c3">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-7" style="color: #4c635b">
+                    <label>Dirección de Bosques</label><br>
+                    <label>Dirección Nacional de Bosques, Ordenamiento Territorial y Suelos</label><br>
+                    <label>Subsecretaría de Planificación y Ordenamiento Ambiental de Territorio</label><br>
+                    <label>Secretaría de Política Ambiental, Cambio Climático y Desarrollo Sustentable</label><br>
+                    <label>Ministerio de Ambiente y Desarrollo Sustentable</label><br>
+                    <label>Dirección de BosquesTucumán 633 5° Piso - CABA</label><br>
+                    <label>(54) (11) 5218-4640</label>
+                </div>
+                <div class="col-lg-3"><img src="resources/img/logoPres.png" alt="" width="339" height="67" class="img-rounded"></div>
+            </div>
+        </div>
+    </div>
+</html>

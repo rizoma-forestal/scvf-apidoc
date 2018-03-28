@@ -1,0 +1,24 @@
+-classpath
+'C:/Users/rincostante/.m2/repository/org/eclipse/persistence/javax.persistence/2.1.1/javax.persistence-2.1.1.jar;C:/Users/rincostante/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar;C:/Users/rincostante/.m2/repository/io/jsonwebtoken/jjwt/0.9.0/jjwt-0.9.0.jar;C:/Users/rincostante/.m2/repository/javax/javaee-web-api/7.0/javaee-web-api-7.0.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa.modelgen.processor/2.5.1/org.eclipse.persistence.jpa.modelgen.processor-2.5.1.jar;C:/Users/rincostante/.m2/repository/org/glassfish/javax.json/1.0.4/javax.json-1.0.4.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.core/2.5.1/org.eclipse.persistence.core-2.5.1.jar;C:/Users/rincostante/.m2/repository/commons-io/commons-io/2.2/commons-io-2.2.jar;C:/Users/rincostante/.m2/repository/org/jasig/cas/client/cas-client-core/3.2.1/cas-client-core-3.2.1.jar;C:/Users/rincostante/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9.jar;C:/Users/rincostante/.m2/repository/commons-fileupload/commons-fileupload/1.3/commons-fileupload-1.3.jar;C:/Users/rincostante/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.8.9/jackson-databind-2.8.9.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa/2.5.1/org.eclipse.persistence.jpa-2.5.1.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/2.5.1/org.eclipse.persistence.jpa.jpql-2.5.1.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/eclipselink/2.6.4/eclipselink-2.6.4.jar;C:/Users/rincostante/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.8.0/jackson-annotations-2.8.0.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/commonj.sdo/2.1.1/commonj.sdo-2.1.1.jar;C:/Users/rincostante/.m2/repository/org/primefaces/extensions/all-themes/1.0.8/all-themes-1.0.8.jar;C:/Users/rincostante/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.asm/2.5.1/org.eclipse.persistence.asm-2.5.1.jar;C:/Users/rincostante/.m2/repository/org/primefaces/primefaces/5.0/primefaces-5.0.jar;C:/Users/rincostante/.m2/repository/org/eclipse/persistence/org.eclipse.persistence.antlr/2.5.1/org.eclipse.persistence.antlr-2.5.1.jar;C:/Users/rincostante/.m2/repository/org/omnifaces/omnifaces/2.1-RC1/omnifaces-2.1-RC1.jar;C:/Users/rincostante/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.8.9/jackson-core-2.8.9.jar'
+-encoding
+'UTF-8'
+-protected
+-sourcepath
+'C:/Users/rincostante/Documents/NetBeansProjects/grp_wildfly/gestionTerritorial/src/main/java;C:/Users/rincostante/Documents/NetBeansProjects/grp_wildfly/gestionTerritorial/target/generated-sources/wsimport'
+-author
+-bottom
+'Copyright &#169; 2018. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/rincostante/Documents/NetBeansProjects/grp_wildfly/gestionTerritorial/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'sacvefor-territorial 1.1.0 API'
+-linkoffline
+'http://docs.oracle.com/javase/8/docs/api' 'C:/Users/rincostante/Documents/NetBeansProjects/grp_wildfly/gestionTerritorial/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'sacvefor-territorial 1.1.0 API'
